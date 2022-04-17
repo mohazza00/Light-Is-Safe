@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
 
-public class Switch : MonoBehaviour
+public class LightSwitch : MonoBehaviour
 {
     [Header("Switch")]
     [SerializeField] private int _maxEnergyLevel = 3;

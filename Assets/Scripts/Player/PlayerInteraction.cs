@@ -217,6 +217,7 @@ public class PlayerInteraction : MonoBehaviour
                     }
                     else
                     {
+                        _playerController.CancelMovement();
                         _lockBox = interactable.GetComponent<LockBox>();
                         _playerController.CanMove = false;
                         InteractingWithLockBox = true;

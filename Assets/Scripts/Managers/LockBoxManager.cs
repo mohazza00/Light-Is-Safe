@@ -6,18 +6,34 @@ using UnityEngine;
 public class LockBoxManager : MonoBehaviour
 {
     [SerializeField] private Transform[] _objectsSpawningSpots;
-    [SerializeField] private LockBoxObject[] _lockBoxObjectsPool;
+    [SerializeField] private LockBoxObjectData[] _lockBoxObjectsPool;
     [SerializeField] private LockBox _lockBox;
 
-
     private List<int> _occupiedSpots = new List<int>();
-    private List<LockBoxObject> _selectedObjects = new List<LockBoxObject>();
+    private List<LockBoxObjectData> _selectedObjects = new List<LockBoxObjectData>();
 
     private void Start()
     {
         SelectThreeRandomObjects();
         SpawnObjectsInRandomSpots();
         _lockBox.SetupPassword(_selectedObjects);
+    }
+
+    private void SelectThreeRandomObjects()
+    {
+        int safeFailCounter = 0;
+        while (_selectedObjects.Count < 5)
+        {
+            safeFailCounter++;
+            int rand = UnityEngine.Random.Range(0, _lockBoxObjectsPool.Length);
+
+            if (!_selectedObjects.Contains(_lockBoxObjectsPool[rand]))
+            {
+                _selectedObjects.Add(_lockBoxObjectsPool[rand]);
+            }
+            if (safeFailCounter >= 100)
+                break;
+        }
     }
 
     private void SpawnObjectsInRandomSpots()
@@ -52,20 +68,5 @@ public class LockBoxManager : MonoBehaviour
         }
     }
 
-    private void SelectThreeRandomObjects()
-    {
-        int safeFailCounter = 0;
-        while (_selectedObjects.Count < 5)
-        {
-            safeFailCounter++;
-            int rand = UnityEngine.Random.Range(0, _lockBoxObjectsPool.Length);
-
-            if (!_selectedObjects.Contains(_lockBoxObjectsPool[rand]))
-            {
-                _selectedObjects.Add(_lockBoxObjectsPool[rand]);
-            }
-            if (safeFailCounter >= 100)
-                break;
-        }
-    }
+  
 }

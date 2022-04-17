@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Light Switch Data")]
+[CreateAssetMenu(menuName = "Data/Light Switch Data")]
 public class LightSwitchData : ScriptableObject
 {
     [Header("High Energy")]

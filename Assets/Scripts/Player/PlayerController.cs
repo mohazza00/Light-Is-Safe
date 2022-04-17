@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Lights")]
     public bool IsTouchingSwitch;
-    public Switch CurrentSwitch;
+    public LightSwitch CurrentSwitch;
     public GameObject Torch;
 
     private Vector2 _ghostPosition;
@@ -130,7 +130,7 @@ public class PlayerController : MonoBehaviour
         Rb.velocity = _movement.normalized * _movementSpeed;
     }
 
-    private void CancelMovement()
+    public void CancelMovement()
     {
         Rb.velocity = Vector2.zero;
         _movement = Vector2.zero;

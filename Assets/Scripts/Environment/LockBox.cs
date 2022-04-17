@@ -33,9 +33,9 @@ public class LockBox : Interactable
     private int SecondObjectAmount = 0;
     private int ThirdObjectAmount = 0;
 
-    private List<LockBoxObject> _lockBoxObjects = new List<LockBoxObject>();
+    private List<LockBoxObjectData> _lockBoxObjects = new List<LockBoxObjectData>();
 
-    public void SetupPassword(List<LockBoxObject> objects)
+    public void SetupPassword(List<LockBoxObjectData> objects)
     {
         //Select 3 random objects for the lock box digits
         int safeFailCounter = 0;
@@ -161,6 +161,10 @@ public class LockBox : Interactable
         }
         else
         {
+            foreach (MenuItem item in DigitItem)
+            {
+                item.DeselectItem();
+            }
             AudioManager.Instance.PlaySound(SoundName.LOCKED);
         }
     }

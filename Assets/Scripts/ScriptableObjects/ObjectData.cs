@@ -17,7 +17,7 @@ public enum ObjectType
     BATTERY,
 }
 
-[CreateAssetMenu(menuName = "Object Data")]
+[CreateAssetMenu(menuName = "Data/Object Data")]
 public class ObjectData : ScriptableObject
 {
     public Sprite Icon;

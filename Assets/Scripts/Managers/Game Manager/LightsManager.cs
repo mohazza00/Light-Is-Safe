@@ -16,7 +16,7 @@ public class LightsManager : MonoBehaviour
 
     [Header("Lights")]
     public Light2D GlobalLight;
-    public Switch CurrentSwitch;
+    public LightSwitch CurrentSwitch;
     public bool LightsOn;
     public float LightStartLifetime;
 

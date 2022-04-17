@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Lock Box Object Data")]
-public class LockBoxObject : ScriptableObject
+[CreateAssetMenu(menuName = "Data/Lock Box Object Data")]
+public class LockBoxObjectData : ScriptableObject
 {
     public GameObject Prefab;
     public Sprite Icon;
