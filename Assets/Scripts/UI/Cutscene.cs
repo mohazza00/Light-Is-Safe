@@ -15,6 +15,8 @@ public class Cutscene : MonoBehaviour
     public bool CanSkip;
     public SceneLoader SceneLoader;
 
+    private Coroutine _showPanelRoutine;
+
     private void Start()
     {
         CurrentPanel = 0;

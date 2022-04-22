@@ -51,7 +51,11 @@ public class LightSwitch : MonoBehaviour
         
         _currentEnergyLevel--;
 
-        if (_currentEnergyLevel <= 0) SwitchIsDead = true;     
+        if (_currentEnergyLevel <= 0)
+        {
+            SwitchIsDead = true;
+            _switchSprite.sortingLayerName = "Default";
+        }
     }
 
     private void SetSwitchDate(float intensity, float lifetime, Color switchColor)

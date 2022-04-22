@@ -90,7 +90,7 @@ public class LightsManager : MonoBehaviour
         CurrentSwitch = null;
 
         _gameManager.Player.Torch.SetActive(true);
-        GlobalLight.intensity = 0.03f;
+        GlobalLight.intensity = 0f;
 
         CurrentLightsState = LightsState.OFF;
 
